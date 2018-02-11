@@ -28,33 +28,33 @@ Supprimez le "#" devant la ligne "dtparam=audio=on" et insérez un "#" devant le
 Enregistrez et quittez leafpad.
 "/boot/config.txt" doit maintenant ressembler à ça :
 
-# Enable audio (loads snd_bcm2835)
-dtparam=audio=on
-#dtoverlay=i2s-mmap
-#dtoverlay=googlevoicehat-soundcard
+    - # Enable audio (loads snd_bcm2835)
+    - dtparam=audio=on
+    - #dtoverlay=i2s-mmap
+    - #dtoverlay=googlevoicehat-soundcard
 
 Maintenant, au tour de l'audio :
 
 Entrez "sudo leafpad /etc/asound.conf" dans le terminal.
 Supprimez tout et remplacez par :
 
-pcm.!default {
-  type asym
-  capture.pcm "mic"
-  playback.pcm "speaker"
-}
-pcm.mic {
-  type plug
-  slave {
-    pcm "hw:1,0"
-  }
-}
-pcm.speaker {
-  type plug
-  slave {
-    pcm "hw:0,0"
-  }
-}
+     pcm.!default {
+       type asym
+       capture.pcm "mic"
+       playback.pcm "speaker"
+     }
+     pcm.mic {
+       type plug
+       slave {
+         pcm "hw:1,0"
+       }
+     }
+     pcm.speaker {
+       type plug
+       slave {
+         pcm "hw:0,0"
+       }
+     }
 
 Enregistrez et fermez leafpad. Rebootez la Pi, lancez le terminal et entrez :
 "leafpad /home/pi/voice-recognizer-raspi/checkpoints/check_audio.py".
@@ -98,7 +98,7 @@ et activez les éléments suivants : Web and app activity, Location history, Dev
 Et voilà ! Maintenant, place au test de votre assistant :
 
 Dans le terminal, entrez : 
-src/main.py
+     src/main.py
 Entrez votre login, appuyez sur le bouton et posez une question à Google.
 Par exemple :
 "Hey Google, what time is it ?"
