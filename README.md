@@ -75,17 +75,24 @@ Place à la configuration du cloud.
 
 1- Ouvez le navigateur de la Raspberry et allez sur :
 https://console.cloud.google.com/
+
 Faites "Create a new project"
 2- Dans la Cloud Console, activez le Google Assistant API
 https://console.developers.google.com/apis/api/embeddedassistant.googleapis.com/overview
+
 3- Créez un client OAUth 2.0 :
 https://console.cloud.google.com/apis/credentials/oauthclient
+
 4- Cliquez sur "Create credentials" et selectionnez "OAuth client ID" et suivez les instructions.
+
 5- Dans la "Credentials list", trouvez vos identifiants et cliquez sur l'icône de téléchargement à droite.
+
 6- Renommez fichier JSON que vous venez de télécharger en "assistant.json", déplacez-le dans "/home/pi/assistant.json"
 dans le dev terminal, entrez : "systemctl stop voice-recognizer"
+
 7- Allez dans "Activity Controls" :
 https://myaccount.google.com/activitycontrols
+
 et activez les éléments suivants : Web and app activity, Location history, Device information, Voice, audio activity
 
 Et voilà ! Maintenant, place au test de votre assistant :
