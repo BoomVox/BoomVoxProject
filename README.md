@@ -22,10 +22,8 @@ Suite au boot :
 
 1- Cliquez sur le logo de la raspberry en haut à gauche. Allez dans "preferences" et cliquez sur
 "Raspberry Pi Configuration". Allez dans "interfaces" et activez le SSH, puis confirmez.
-
-2 - Cliquez sur le symbole Wi-Fi en haut à gauche, et cliquez sur le réseau adéquat et connectez-vous.
-
-3 - Double-cliquez sur “Start dev terminal”, et entrez "sudo leafpad /boot/config.txt".
+2- Cliquez sur le symbole Wi-Fi en haut à gauche, et cliquez sur le réseau adéquat et connectez-vous.
+3- Double-cliquez sur “Start dev terminal”, et entrez "sudo leafpad /boot/config.txt".
 Supprimez le "#" devant la ligne "dtparam=audio=on" et insérez un "#" devant les lignes en dessous.
 Enregistrez et quittez leafpad.
 "/boot/config.txt" doit maintenant ressembler à ça :
@@ -75,18 +73,18 @@ https://developers.google.com/assistant/sdk/prototype/getting-started-pi-python/
 
 Place à la configuration du cloud.
 
-Ouvez le navigateur de la Raspberry et allez sur :
+1- Ouvez le navigateur de la Raspberry et allez sur :
 https://console.cloud.google.com/
 Faites "Create a new project"
-Dans la Cloud Console, activez le Google Assistant API
+2- Dans la Cloud Console, activez le Google Assistant API
 https://console.developers.google.com/apis/api/embeddedassistant.googleapis.com/overview
-Créez un client OAUth 2.0 :
+3- Créez un client OAUth 2.0 :
 https://console.cloud.google.com/apis/credentials/oauthclient
-Cliquez sur "Create credentials" et selectionnez "OAuth client ID" et suivez les instructions.
-Dans la "Credentials list", trouvez vos identifiants et cliquez sur l'icône de téléchargement à droite.
-Renommez fichier JSON que vous venez de télécharger en "assistant.json", déplacez-le dans "/home/pi/assistant.json"
+4- Cliquez sur "Create credentials" et selectionnez "OAuth client ID" et suivez les instructions.
+5- Dans la "Credentials list", trouvez vos identifiants et cliquez sur l'icône de téléchargement à droite.
+6- Renommez fichier JSON que vous venez de télécharger en "assistant.json", déplacez-le dans "/home/pi/assistant.json"
 dans le dev terminal, entrez : "systemctl stop voice-recognizer"
-Allez dans "Activity Controls" :
+7- Allez dans "Activity Controls" :
 https://myaccount.google.com/activitycontrols
 et activez les éléments suivants : Web and app activity, Location history, Device information, Voice, audio activity
 
